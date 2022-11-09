@@ -86,7 +86,7 @@ For example:
 
     + how to combine path with speed [Ref:7.1](#71-spatial-temporal-planning)
 
-    + a series of vehicle states $ [ x_{1},x_{2}, \ldots ,x_{T_{h}}]$, $x_{t}= \{ x_{t},y_{t}, \phi _{t},v_{t}\} \forall t\in \{1,...,T_h\}$
+    + a series of vehicle states $ [ x_{1},x_{2}, \ldots ,x_{T_{h}}]$, $x_{t}= [ x_{t},y_{t}, \phi _{t},v_{t}] \forall t\in [1,...,T_h]$
 
     + why do the raw trajectories need to be processed to get TaEc Motion Skill?
 
@@ -127,7 +127,7 @@ initial state $x_0$. contraol variables are acceleration and steering angle. Whe
 
 + Policy Loss: 
 
-    $J=E_{\pi}[ \sum_{i=1}^{N}\gamma^{i}\tilde{r}(s_{i},z_{i})+ \alpha \mathcal{H}(\pi_{\theta}(z|s))]$
+    $J=E_{\pi}[\sum_{i=1}^{N}\gamma^{i}\tilde{r}(s_{i},z_{i})+ \alpha \mathcal{H}(\pi_{\theta}(z|s))]$
 
     penalizing jerks, collisions, and driving out of road
 
@@ -152,7 +152,7 @@ initial state $x_0$. contraol variables are acceleration and steering angle. Whe
     + $R_{driving}=d_{t}-d_{t-1}$ longitudinal coordinates of the ego vehicle in the current lane of two consecutive time steps
     + $R_{speed}=v_{t}/v_{max}$
     + $R_{termination}$, large positive reward for reaching goal, negative if run out of the road or crash, zero if the game is not terminal
-+ Note: Once a skill is chosen, T actions are executed before sampling the next skill, and the reward will be the summary of T-step rewards $\tilde{r}=\sum_{t=1}^{T}r_{t}$. Here we set T=10. 
++ Note: Once a skill is chosen, T actions are executed before sampling the next skill, and the reward will be the summary of T-step rewards $\tilde{r}=\sum_{t=1}^{T} r_{t}$. Here we set T=10. 
 
 + baseline: PPO, SAC, Flat TaEcRL (T=1), SAC constant (output a fixed control signal)
 
