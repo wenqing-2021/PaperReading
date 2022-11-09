@@ -86,7 +86,7 @@ For example:
 
     + how to combine path with speed [Ref:7.1](#71-spatial-temporal-planning)
 
-    + a series of vehicle states $ [ x_{1},x_{2}, \ldots ,x_{T_{h}}]$, $x_{t}= [ x_{t},y_{t}, \phi _{t},v_{t}] \forall t\in [1,...,T_h]$
+    + a series of vehicle states $[x_{1},x_{2},...,x_{T_{h}}]$, $x_{t}= [x_{t},y_{t}, \phi_{t}, v_{t}] \forall t\in [1,...,T_h]$
 
     + why do the raw trajectories need to be processed to get TaEc Motion Skill?
 
