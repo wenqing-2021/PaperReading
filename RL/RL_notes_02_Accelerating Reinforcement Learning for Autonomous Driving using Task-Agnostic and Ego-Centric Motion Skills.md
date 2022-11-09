@@ -86,7 +86,7 @@ For example:
 
     + how to combine path with speed [Ref:7.1](#71-spatial-temporal-planning)
 
-    + a series of vehicle states $ \left[ x_{1},x_{2}, \ldots ,x_{T_{h}}\right]$, $x_{t}= \left\{ x_{t},y_{t}, \phi _{t},v_{t}\right\} \forall t\in \{1,...,T_h\}$
+    + a series of vehicle states $ [ x_{1},x_{2}, \ldots ,x_{T_{h}}]$, $x_{t}= \{ x_{t},y_{t}, \phi _{t},v_{t}\} \forall t\in \{1,...,T_h\}$
 
     + why do the raw trajectories need to be processed to get TaEc Motion Skill?
 
@@ -125,11 +125,15 @@ initial state $x_0$. contraol variables are acceleration and steering angle. Whe
 
 + **GOAL:** learn a policy that outputs latent skill variables $π_{\theta}(z|s)$
 
-+ Policy Loss: $$J=E_{\pi}\left[ \sum _{i=1}^{N}\gamma ^{i}\tilde{r}(s_{i},z_{i})+ \alpha \mathcal{H}(\pi _{\theta}(z|s))\right]$$
++ Policy Loss: 
 
-    + penalizing jerks, collisions, and driving out of road
+    $J=E_{\pi}[ \sum _{i=1}^{N}\gamma ^{i}\tilde{r}(s_{i},z_{i})+ \alpha \mathcal{H}(\pi _{\theta}(z|s))]$
 
-+ Entropy Loss (assume the latent space is uniform distribution): $$\mathcal{H}(\pi _{\theta}(z|s))=-E \left[ \log \pi _{\theta}(z|s)\right] \alpha -D_{KL}(\pi _{\theta}(z|s),U(z))$$
+    penalizing jerks, collisions, and driving out of road
+
++ Entropy Loss (assume the latent space is uniform distribution): 
+
+    $\mathcal{H}(\pi _{\theta}(z|s))=-E [ \log \pi _{\theta}(z|s)] \alpha -D_{KL}(\pi _{\theta}(z|s),U(z))$
 
 ### 3.5 Algorithm
 ![](../pictures/notes_02/tmpA422.png)
@@ -144,7 +148,7 @@ initial state $x_0$. contraol variables are acceleration and steering angle. Whe
     + $R_{driving}=d_{t}-d_{t-1}$ longitudinal coordinates of the ego vehicle in the current lane of two consecutive time steps
     + $R_{speed}=v_{t}/v_{max}$
     + $R_{termination}$, large positive reward for reaching goal, negative if run out of the road or crash, zero if the game is not terminal
-+ Note: Once a skill is chosen, T actions are executed before sampling the next skill, and the reward will be the summary of T-step rewards $ \tilde{r}= \sum _{t=1}^{T}r_{t}.$. Here we set T=10. 
++ Note: Once a skill is chosen, T actions are executed before sampling the next skill, and the reward will be the summary of T-step rewards $\tilde{r}=\sum_{t=1}^{T}r_{t}$. Here we set T=10. 
 
 + baseline: PPO, SAC, Flat TaEcRL (T=1), SAC constant (output a fixed control signal)
 
