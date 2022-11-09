@@ -123,17 +123,21 @@ initial state $x_0$. contraol variables are acceleration and steering angle. Whe
 
 ### 3.4 RL with Exploration in Skill Space
 
-+ **GOAL:** learn a policy that outputs latent skill variables $π_{\theta}(z|s)$
++ **GOAL:** learn a policy that outputs latent skill variables $\pi_{\theta}(z|s)$
 
 + Policy Loss: 
 
-    $J=E_{\pi}[ \sum _{i=1}^{N}\gamma ^{i}\tilde{r}(s_{i},z_{i})+ \alpha \mathcal{H}(\pi _{\theta}(z|s))]$
+    $J=E_{\pi}[ \sum_{i=1}^{N}\gamma^{i}\tilde{r}(s_{i},z_{i})+ \alpha \mathcal{H}(\pi_{\theta}(z|s))]$
 
     penalizing jerks, collisions, and driving out of road
 
-+ Entropy Loss (assume the latent space is uniform distribution): 
++ alpha Loss (assume the latent space is uniform distribution): 
 
-    $\mathcal{H}(\pi _{\theta}(z|s))=-E [ \log \pi _{\theta}(z|s)] \alpha -D_{KL}(\pi _{\theta}(z|s),U(z))$
+    $\mathcal{H}(\pi_{\theta}(z|s))=-E[ \log \pi_{\theta}(z|s)] \propto -D_{KL}(\pi_{\theta}(z|s),U(z))$
+    
+    Loss = $\alpha E[\mathcal{H}(\pi_{\theta}(z|s)) - \delta]$
+
+    $\delta$ is the target divergence
 
 ### 3.5 Algorithm
 ![](../pictures/notes_02/tmpA422.png)
