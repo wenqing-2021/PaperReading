@@ -1,10 +1,10 @@
-# literature notes
+# RL_notes_02
 
-# Title
+# Accelerating Reinforcement Learning for Autonomous Driving using Task-Agnostic and Ego-Centric Motion Skills
 
-**{2000}, {Authors}, {Artificial Intelligence}**
+![title](../pictures/notes_02/title.png)
 
-**{引用格式}**
+**{2022}, {Zhou Tong}, {Arixv: https://arxiv.org/pdf/2209.12072.pdf}**
 
 ## 0\. Summary
 
@@ -14,13 +14,47 @@
 
 [ 作者的研究目标是什么？]
 
-## 2\. Background / Problem Statement
+## 2\. Background
 
-[研究的背景以及问题陈述：作者需要解决的问题是什么？]
+### 2.1 RL in autonomous driving
+
++ learning efficiency will quickly decay due to un-informed exploration and the sparse and delayed rewards
+
+### 2.2 Pre-training policy & IL (expert demonstrations)
+
++ **unavailable** are expensive and labor-intense to collect and annotate if unavailable
+
++ **suboptimal** unbalanced in distribution and hardly optimal-guaranteed
+
++ **generalization** struggling to transfer to new tasks as the demonstrations are environment-conditioned or task-specific
+
+### 2.2 RL Limitations: 
+
++ rarely reflect driving intentions
+
+For example: 
+
+![](../pictures/notes_02/tmp180C.png)
+
++ If offline training agent, it is hard to guarantee all essential skills
+
++ If task-specific, skill design limits the flexibility and expressiveness of motions. Hard to apply in dense traffic scenario.
 
 ## 3\. Method(s)
 
-[作者解决问题的方法/算法是什么？是否基于前人的方法？基于了哪些？]
+    TaEc-RL (RL with Task-agnostic and Ego-centric motion skills)
+
+### 3.1 Overview
+
+![](../pictures/notes_02/tmp190C.png)
+
++ design a task-agnostic and ego-centric (TaEc) motion skill library
+
++ distill these motion skills into a lowdimensional latent skill space
+
++ solve diverse, complex tasks like driving in multi-agent settings
+
+### 3.2 
 
 ## 4\. Evaluation
 
