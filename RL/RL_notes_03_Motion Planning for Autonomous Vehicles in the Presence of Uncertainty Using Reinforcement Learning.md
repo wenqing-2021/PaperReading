@@ -1,10 +1,8 @@
-# RL_notes_03
-
-# Motion Planning for Autonomous Vehicles in the Presence of Uncertainty Using Reinforcement Learning
+# [PaperReading RL 03]Motion Planning for Autonomous Vehicles in the Presence of Uncertainty Using Reinforcement Learning
 
 ![title](../pictures/notes_03/tmpB85F.png)
 
-**2021 Affiliation： Noah’s Ark Lab., Huawei Technologies Cannada **
+**IROS 2021 Affiliation Noah’s Ark Lab., Huawei Technologies Cannada**
 
 [论文链接](https://ieeexplore.ieee.org/abstract/document/9636480)
 
@@ -127,14 +125,14 @@ propose a method taht tackle the motion planning problem in the presence of unce
 
 ## 6\. Notes
 
-1. why is the Guassian Process not suitable to estimate the lower bound ? (the following is the original text)
+1. why is the Guassian Process not suitable to estimate the lower bound ? (the following passage is the original text)
 
     > Since we want to estimate the lower bound, a Gaussian distribution is not suitable for this purpose. We propose to extend SAC with quantile regression.
 
 
 ## 7\. References
 
-Generally, this paper aims to maximize the minimum Q value in a distribution. But I think safe RL is also a possiable way to solve these challenging scenarios, e.g., uncertainty scenarios. 
+Generally, this paper aims to maximize the minimum Q value in a distribution. But safe RL is also a possiable way to solve these challenging scenarios, e.g., uncertainty scenarios. 
 
 [1] Z. Liu et al., ‘Constrained Variational Policy Optimization for Safe Reinforcement Learning’, in Proceedings of the 39th International Conference on Machine Learning, Jun. 2022, pp. 13644–13668. Accessed: Sep. 29, 2022. [Online]. Available: https://proceedings.mlr.press/v162/liu22b.html
 

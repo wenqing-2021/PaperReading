@@ -1,4 +1,4 @@
-**[论文笔记01]Self-Learned Intelligence for Integrated Decision and Control of Automated Vehicles at Signalized Intersections**
+# [PaperReading RL 01]Self-Learned Intelligence for Integrated Decision and Control of Automated Vehicles at Signalized Intersections
 
 ![](https://i.imgur.com/PEP9zID.png)
 

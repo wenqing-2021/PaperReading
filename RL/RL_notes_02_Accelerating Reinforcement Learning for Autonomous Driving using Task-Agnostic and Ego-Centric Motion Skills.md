@@ -1,6 +1,4 @@
-# RL_notes_02
-
-# Accelerating Reinforcement Learning for Autonomous Driving using Task-Agnostic and Ego-Centric Motion Skills
+# [PaperReading RL 02]Accelerating Reinforcement Learning for Autonomous Driving using Task-Agnostic and Ego-Centric Motion Skills
 
 ![title](../pictures/notes_02/title.png)
 
